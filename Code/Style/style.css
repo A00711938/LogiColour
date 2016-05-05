@@ -1,0 +1,87 @@
+/* CSS Doc*/
+
+.red {
+	color: red;
+}
+.green {
+	color: green;
+}
+.purple {
+	color: purple;
+}
+.yellow {
+	color: yellow;
+}
+.orange {
+	color: orange;	
+}
+.blue {
+	color: blue;
+}
+
+#header {
+	background-color: #eee;
+	font-family: Comic Sans MS;
+	font-size: 100px;
+	text-align: center;
+}
+img {
+	margin-left: 200px;
+}
+/*
+#main {
+	margin: auto;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-content: center;
+	align-content: center;
+	justify-content: space-around;
+	text-align: center;
+	width: 100px;
+}
+input {
+	width: 100px;
+}
+*/
+#content {
+	border: 2px solid blue;
+	margin-left: 200px;
+	margin-right: 200px;
+}
+#question {
+	float: left;
+}
+#message {
+	font-size: 45px;
+}
+#controls {
+	display: inline;
+}
+input {
+	font-size: 60px;
+}
+#score {
+	border: thin dashed;
+	background-color: orange;
+	margin: 0px 380px 0px 380px;
+	font-size: 20px;
+}
+
+#num1 {
+	padding: 20px;
+	font-size: 80px;
+	border: 1px solid red;
+	background-color: lightgrey;
+}
+#num2 {
+	padding: 20px;
+	font-size: 80px;
+	border: 1px solid red;
+	background-color: lightgrey;
+}
+#sum {
+	padding: 20px;
+	font-size: 80px;
+	border: 1px solid red;
+	background-color: lightgrey;
+}
