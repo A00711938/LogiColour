@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>LogiColor Marathon Mode</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script>
+	var color = ["green", "red", "yellow", "blue", "white", "grey", "purple", "orange", "black"];
+	var c1 = Math.floor(Math.random() * 8);
+	var c2 = Math.floor(Math.random() * 8);
+	var c3 = Math.floor(Math.random() * 8);
+	
+	var a = Math.floor(Math.random() * 10 + 1);
+	var b = Math.floor(Math.random() * 10 + 1);
+	var score = 0;
+
+	
+	function colorComb( color1, color2, color3) {
+		if (color1 == color[1] && color2 == color[3] || color1 == color[3] && color2 == color[1]) { // red + blue = purple
+			if (color3 == color[6]) {
+				return true;
+			} else{
+				return false;
+			}
+		} else if (color1 == color[8] && color2 == color[4] || color1 == color[4] && color2 == color[8]) { // black + white = grey
+			if (color3 == color[5]) {
+				return true;
+			} else{
+				return false;
+			}
+		} else if (color1 == color[2] && color2 == color[1] || color1 == color[1] && color2 == color[2]) { // yellow + red = orange
+			if (color3 == color[7]) {
+				return true;
+			} else{
+				return false;
+			}
+		} else if (color1 == color[2] && color2 == color[3] || color1 == color[3] && color2 == color[2]) { // yellow + blue = green
+			if (color3 == color[0]) {
+				return true;
+			} else{
+				return false;
+			}
+		} else if (color1 === color2 && color1 === color3) { // all equal
+				return true;
+		}
+		return false;
+	}
+		
+	window.addEventListener("load", displayMessage, false);
+	
+	function displayMessage() {
+		var c1 = Math.floor(Math.random() * 8);
+		var c2 = Math.floor(Math.random() * 8);
+		var c3 = Math.floor(Math.random() * 8);
+		var a = Math.floor(Math.random() * 10 + 1);
+		var b = Math.floor(Math.random() * 10 + 1);
+		document.getElementById('num1').style.color = color[c1];
+		document.getElementById('num2').style.color = color[c2];
+		document.getElementById('sum').style.color = color[c3];
+		document.getElementById('num1').innerHTML = a;
+		document.getElementById('num2').innerHTML = b;
+		document.getElementById('sum').innerHTML = (a + b);
+		document.getElementById('score').innerHTML = "Score: " + score;
+	}
+	
+	document.getElementById('tr').addEventListener("click", trueFun);
+	document.getElementById('fal').addEventListener("click", falseFun);
+	
+	function trueFun() {
+		if (colorComb(color[c1], color[c2], color[c3])) {
+			score++;
+			document.getElementById('score').innerHTML = "Score" + score;
+			document.getElementById('message').style.color = "green";
+			document.getElementById('message').innerHTML = "<span class=\"glyphicon glyphicon-ok\"></span>";
+			displayMessage();
+		} else{
+			document.getElementById('message').style.color = "red";
+			document.getElementById('message').innerHTML = "<span class=\"glyphicon glyphicon-remove\"></span>";
+			displayMessage();
+		}
+	}
+	
+	function falseFun() {
+		if (!colorComb(color[c1], color[c2], color[c3])) {
+			score++;
+			document.getElementById('score').innerHTML = "Score: " + score;
+			document.getElementById('message').style.color = "green";
+			document.getElementById('message').innerHTML = "<span class=\"glyphicon glyphicon-ok\"></span>";
+			displayMessage();
+		} else{
+			document.getElementById('message').style.color = "red";
+			document.getElementById('message').innerHTML = "<span class=\"glyphicon glyphicon-remove\"></span>";
+			displayMessage();
+		}
+	}
+		</script>
+    <meta content="utf-8">
+    <style>
+        header {
+            background-color: white;
+            position: absolute;
+            top: 2%;
+            width: 96%;
+            height: 10%;
+            font-size: 60px;
+            left: 2%;
+        }
+        body {
+            background-color: black;
+        }
+        #green {
+            color: green;
+        }
+        #red {
+            color: red;
+        }
+        #tr {
+            width: 49%;
+            height: 100%;
+            font-size: 150px;
+        }
+        #fal {
+            width: 49%;
+            height: 100%;
+            font-size: 150px;
+        }
+        footer {
+            width: 98%;
+            height: 25%;
+            position: absolute;
+            bottom: 1%;
+            left: 1%;
+        }
+        #score {
+            position: fixed;
+            text-align: center;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+        }
+        #score > div {
+            display: inline-block;
+            text-align: left;
+            color: black;
+            font-weight: bold;
+            font-size: 36px;
+        }
+        canvas {
+            padding-left: 0;
+            padding-right: 0;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            height: 100%;
+            background-color: black;
+        }
+        table {
+            position: absolute;
+            text-align: center;
+            width: 100%;
+            height: 63%;
+            top: 12%;
+            font-size: 90px;
+            color: white;
+        }
+        
+    </style>
+</head>
+<header align="center">
+    <div>
+        <a href="index.html"><span class="glyphicon glyphicon-home"></span></button></a>  <a href="settings.html"><span class="glyphicon glyphicon-cog"></span></button></a>
+    </div>
+</header>
+<body>
+    <table>
+        <col width="40%"><col width="20%"><col width="40%">
+        <tr><td><span id = "num1"></span></td><td></td><td></td></tr>
+        <tr><td>+</td><td>=</td><td><span id = "sum"></span></td></tr>
+        <tr><td><span id = "num2"></span></td><td id="message"></td><td></td></tr>
+    </table>
+</body>
+<footer align="center">
+    <div id="controls">
+        <button id="tr" style="background-color: #4CAF50;" name="answer1" onclick="trueFun()"><span class="glyphicon glyphicon-ok" style="color:green;"></span></button><button id="fal" style="background-color: #BF5B5F;" name="answer2" onclick="falseFun()"><span class="glyphicon glyphicon-remove" style="color:red;"></span></button>
+    </div>
+    <div id="score">
+        <div>Score: 0</div>
+    </div>
+</footer>
+</html>
