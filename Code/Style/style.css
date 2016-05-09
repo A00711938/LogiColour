@@ -125,6 +125,10 @@ h3 .num {
 
 
 /* leaderboard */
+.col-sm-6{
+	margin: 0 auto !important;
+	float: none !important;
+}
 .row a {
 	background-color: black;
 	color: blue;
@@ -147,18 +151,19 @@ h3 .num {
 	background-clip: text;
 }
 
-.table th:nth-child(odd) {
-	color: yellow;
-}
-.table th:nth-child(even) {
-	color: blue;
-}
-
 .table td:nth-child(odd) {
+	background-color: black;
+	border: none;
+	text-align: center;
+	width: 100px;
 	color: yellow;
 }
 .table td:nth-child(even) {
-	color: blue;
+	background-color: black;
+	border: none;
+	text-align: center;
+	width: auto;
+	color: lightblue;
 }
 .table tr {
 	background-color: black;
