@@ -19,7 +19,7 @@
 	color: blue;
 }
 
-.all {
+.entire {
 	background-color: black;
 }
 
@@ -55,22 +55,27 @@ h1 {
     transition-duration: 0.4s;
 }
 .col-md-2 a:nth-child(1):hover{
+	background-color: black;
 	box-shadow: 0 12px 16px 0 lightgreen;
 	color: lightgreen;
 }
 .col-md-2 a:nth-child(2):hover{
+	background-color: black;
 	box-shadow: 0 12px 16px 0 orange;
 	color: orange;
 }
 .col-md-2 a:nth-child(3):hover{
+	background-color: black;
 	box-shadow: 0 12px 16px 0 red;
 	color: red;
 }
 .col-md-2 a:nth-child(4):hover{
+	background-color: black;
 	box-shadow: 0 12px 16px 0 yellow;
 	color: yellow;
 }
 .col-md-2 a:nth-child(5):hover{
+	background-color: black;
 	box-shadow: 0 12px 16px 0 white;
 	color: white;
 }
@@ -177,10 +182,12 @@ h3 .num {
     transition-duration: 0.4s;
 }
 .col-md-2 button:nth-child(even):hover{
+	background-color: black;
 	box-shadow: 0 12px 16px 0 lightgreen;
 	color: lightgreen;
 }
 .col-md-2 button:nth-child(odd):hover{
+	background-color: black;
 	box-shadow: 0 12px 16px 0 red;
 	color: red;
 }
