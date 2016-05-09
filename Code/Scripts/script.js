@@ -3,6 +3,7 @@ var c1 = Math.floor(Math.random() * 9);
 var c2 = Math.floor(Math.random() * 9);
 var c3 = Math.floor(Math.random() * 9);
 
+
 var a = Math.floor(Math.random() * 10 + 1);
 var b = Math.floor(Math.random() * 10 + 1);
 var score = 0;
@@ -33,7 +34,7 @@ function colorComb( color1, color2, color3) {
         } else{
             return false;
         }
-    } else if (color1 === color2 && color1 === color3) { // all equal
+    } else if (color1 === color2 && color2 === color3) { // all equal
             return true;
     }
     return false;
@@ -45,10 +46,12 @@ function displayMessage() {
     var c1 = Math.floor(Math.random() * 9);
     var c2 = Math.floor(Math.random() * 9);
     var c3 = Math.floor(Math.random() * 9);
+    
     var a = Math.floor(Math.random() * 10 + 1);
     var b = Math.floor(Math.random() * 10 + 1);
+    
     document.getElementById('num1').style.color = color[c1];
-    document.getElementById('num2').style.color = color[c2];
+    document.getElementById('num2').style.color = color[c1];
     document.getElementById('sum').style.color = color[c3];
     document.getElementById('num1').innerHTML = a;
     document.getElementById('num2').innerHTML = b;
@@ -56,7 +59,7 @@ function displayMessage() {
     document.getElementById('score').innerHTML = "Score: " + score;
 }
 
-document.getElementById('tru').addEventListener("click", trueFun);
+docuent.getElementById('tr').addEventListener("click", trueFun);
 document.getElementById('fal').addEventListener("click", falseFun);
 
 function trueFun() {
@@ -64,11 +67,11 @@ function trueFun() {
         score++;
         document.getElementById('score').innerHTML = "Score" + score;
         document.getElementById('message').style.color = "green";
-        document.getElementById('message').innerHTML = "<span class=\"glyphicon glyphicon-ok\"></span>";
+        document.getElementById('message').innerHTML = "Correct!";
         displayMessage();
     } else{
         document.getElementById('message').style.color = "red";
-        document.getElementById('message').innerHTML = "<span class=\"glyphicon glyphicon-remove\"></span>";
+        document.getElementById('message').innerHTML = "Wrong!";
         displayMessage();
     }
 }
@@ -78,11 +81,11 @@ function falseFun() {
         score++;
         document.getElementById('score').innerHTML = "Score: " + score;
         document.getElementById('message').style.color = "green";
-        document.getElementById('message').innerHTML = "<span class=\"glyphicon glyphicon-ok\"></span>";
+        document.getElementById('message').innerHTML = "Correct!";
         displayMessage();
     } else{
         document.getElementById('message').style.color = "red";
-        document.getElementById('message').innerHTML = "<span class=\"glyphicon glyphicon-remove\"></span>";
+        document.getElementById('message').innerHTML = "Wrong!";
         displayMessage();
     }
 }
