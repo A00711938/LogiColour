@@ -1,5 +1,6 @@
 !DOCTYPE html>
 <html>
+<link rel="stylesheet" type="text/css" href="Style/style.css">
 <style>
 #myProgress {
   width: 100%;
@@ -36,7 +37,7 @@ function move() {
   function frame() {
     if (width == 100) {
       clearInterval(id);
-	  window.location.href = "marathonmode.html";
+	  window.location.href = "marathon.html";
     } else {
       width++; 
       elem.style.width = width + '%'; 
