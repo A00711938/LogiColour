@@ -4,14 +4,16 @@
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" type="text/css" href="Style/style.css">
+		<link rel="stylesheet" type="text/css" href="Bootstrap/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 		<script src="Bootstrap/js/bootstrap.min.js"></script>
 		<script>
 	
 
 	var color = ["green", "red", "yellow", "blue", "white", "grey", "purple", "orange", "black"];
-	var c1 = Math.floor(Math.random() * 8);
-	var c2 = Math.floor(Math.random() * 8);
-	var c3 = Math.floor(Math.random() * 8);
+	var c1 = Math.floor(Math.random() * 9);
+	var c2 = Math.floor(Math.random() * 9);
+	var c3 = Math.floor(Math.random() * 9);
 	
 	
 	var a = Math.floor(Math.random() * 10 + 1);
@@ -44,7 +46,7 @@
 			} else{
 				return false;
 			}
-		} else if (color1 === color2 && color1 === color3) { // all equal
+		} else if (color1 === color2 && color2 === color3) { // all equal
 				return true;
 		}
 		return false;
@@ -53,13 +55,15 @@
 	window.addEventListener("load", displayMessage, false);
 	
 	function displayMessage() {
-		var c1 = Math.floor(Math.random() * 8);
-		var c2 = Math.floor(Math.random() * 8);
-		var c3 = Math.floor(Math.random() * 8);
+		var c1 = Math.floor(Math.random() * 9);
+		var c2 = Math.floor(Math.random() * 9);
+		var c3 = Math.floor(Math.random() * 9);
+		
 		var a = Math.floor(Math.random() * 10 + 1);
 		var b = Math.floor(Math.random() * 10 + 1);
+		
 		document.getElementById('num1').style.color = color[c1];
-		document.getElementById('num2').style.color = color[c2];
+		document.getElementById('num2').style.color = color[c1];
 		document.getElementById('sum').style.color = color[c3];
 		document.getElementById('num1').innerHTML = a;
 		document.getElementById('num2').innerHTML = b;
@@ -101,22 +105,20 @@
         <title>LogiColour</title>
 		
     </head>
-	<body class = "content">
-		<!-- <header id = "header"><a class = "red">L</a><a class = "green">o</a><a class = "orange">g</a><a class = "yellow">i</a><a class = "blue">C</a><a class = "green">o</a><a class = "purple">l</a><a class = "green">o</a><a class = "red">r</a></header> -->
-		<img src="Images/logo.png" alt = "Logo">
-		<br/>
-		<form>
-			<div id = "main">
-				<div id="content">
-					<h3><span id = "num1"></span> + <span id = "num2"></span> = <span id = "sum"></span></h3>
-					<h3 id="message"></h3>
-					<div id = "controls">
-						<input type = "button" name = "answer1" value = "&#9989;" id="tr" onclick="trueFun()"></input>
-						<input type = "button" name = "answer2" value = "&#10060" id="fal" onclick="falseFun()"></input>
-					</div>
-					<h3 id="score"></h3>	
-				</div>
+	<body>
+		<div class = "container">
+			<div class="header">
+				<a href="index.html"><img src="logo_temp.jpg" alt = "Logo"></a>
 			</div>
-		</form>
+			<div class = "centered text-center">
+				<h3 class = "question"><span class = "num" id = "num1"></span> + <span class = "num" id = "num2"></span> = <span class = "num" id = "sum"></span></h3>
+				<h3 id="message"></h3>
+				<div id = "controls">
+					<a type = "button" name = "answer1" class = "btn btn-primary btn-lg" id="tr" onclick="trueFun()">&#9989</a>
+					<a type = "button" name = "answer2" class = "btn btn-primary btn-lg" id="fal" onclick="falseFun()">&#10060</a>
+				</div>
+				<h3 id="score"></h3>	
+			</div>
+		</div>
 	</body>
 </html>
