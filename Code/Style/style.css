@@ -227,8 +227,16 @@ footer {
     2px 2px 0 #000;
 }
 #leftCorner {
-    font-size: 70px;
+    text-align: center;
+    font-size: 50px;
     color: blue;
+}
+#level {
+    text-align: center;
+}
+#hearts {
+    text-align: center;
+    border: thin dashed red;
 }
 #hearts > span {
     color: red;
