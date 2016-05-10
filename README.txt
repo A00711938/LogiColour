@@ -1,7 +1,7 @@
 this is the readme file
 
 
-Your Turn!   Setup YOUR comp2910 Project
+ Setup YOUR comp2910 Project
 1.	Agree on workflow
 2.	Assign one member in the team to be the GitHub Hosting Person.
 3.	Test that everyone can make change and update repository. 
